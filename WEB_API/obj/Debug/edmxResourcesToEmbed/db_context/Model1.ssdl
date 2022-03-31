@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="myprojectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'myproject.dbo.MYTABLE1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MYTABLE1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="20" />
+    <Property Name="AGE" Type="int" />
+    <Property Name="SALARY" Type="int" />
+    <Property Name="CITY" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="myprojectModelStoreContainer">
+    <EntitySet Name="MYTABLE1" EntityType="Self.MYTABLE1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MYTABLE1].[ID] AS [ID], 
+    [MYTABLE1].[NAME] AS [NAME], 
+    [MYTABLE1].[AGE] AS [AGE], 
+    [MYTABLE1].[SALARY] AS [SALARY], 
+    [MYTABLE1].[CITY] AS [CITY]
+    FROM [dbo].[MYTABLE1] AS [MYTABLE1]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
